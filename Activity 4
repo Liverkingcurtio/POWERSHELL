@@ -1,0 +1,11 @@
+Create an array containing a range with a random starting and stopping point.  The starting point will be a random number from -10 through 0.
+The ending point will be a random number from 1 through 20.
+For example, if the first random number is -3, and the second random number is 2, your array will be -3, -2, -1, 0, 1, 2
+Create a variable that contains the contents of the array in rever
+Using the above example, your reversed array will be 2, 1, 0, -1, -2, -3
+
+
+ $mom = (get-random -minimum -10 -maximum 0)..(get-random -minimum 1 -maximum 20)
+ $mom
+ [array]::reverse($mom)
+ $mom
