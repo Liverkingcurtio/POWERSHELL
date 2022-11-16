@@ -1,0 +1,32 @@
+Display a list of running processes.
+
+get-process
+Display a list of all running processes that start with the letter "s".
+get-process -name *s*
+
+Find the cmdlet and its purpose for the following aliases:
+
+
+
+gal   get alias
+
+
+dir   get-childitem
+
+
+echo   write-output
+
+
+?   where-object
+
+
+%    foreach-object
+
+
+ft   format-table
+
+Display a list of Windows Firewall Rules.
+$var1  =
+get-netfirewallrule
+Create a new alias called "gh" for the cmdlet "Get-Help"
+set-alias "gh" get-help
