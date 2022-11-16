@@ -1,0 +1,30 @@
+ACTIVITY: Find Cmdlets
+
+
+
+
+
+Ensure that you have the latest copy of help by updating your help system.
+update-help
+
+Which cmdlets deal with the viewing/manipulating of processes?
+get-process 
+
+Display a list of services installed on your local computer.
+get-services
+
+
+What cmdlets are used to write or output objects or text to the screen?
+write-output
+
+What cmdlets can be used to create, modify, list, and delete variables?
+set-variable
+clear-variale
+remove-variable
+new-variable
+
+What cmdlet can be used, other than Get-Help, to find and list other cmdlets?
+get-command
+
+Find the cmdlet that is used to prompt the user for input.
+read-host
