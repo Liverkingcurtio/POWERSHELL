@@ -1,0 +1,40 @@
+Create a variable called "var1" that holds a random number between 25-50.
+$var1 = get-random -minumum 25 -maximum 50
+
+Create a variable called "var2" that holds a random number between 1-10.
+
+$var2 = 5
+Create a variable called "sum" that holds the sum of var1 and var2.
+
+$sum = $var1 + $var2
+Create a variable called "sub" that holds the difference of var1 and var2.
+
+$sub = $var1 - $var2
+Create a variable called "prod" that holds the product of var1 and var2.
+
+$prod = $var1 * $var2
+Create a variable called "quo" that holds the quotient of var1 and var2.
+
+$quo = $var1 / $var2
+
+Replace the variables in the following format:
+"45" + "5" = "50"
+
+write-host "$var1 + $var2 = $sum"
+
+Replace the variables in text with their values in the following format:
+"45" - "5" = "40"
+
+"$var1 - $var2 = $sub"
+
+Replace the variables in text with their values in the following format:
+"45" * "5" = "225"
+
+"$var1 * $var2 = $prod"
+
+
+
+Replace the variables in text with their values in the following format:
+"45" / "5" = "quo"
+
+"$var1 / $var2 = $quo"
