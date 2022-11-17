@@ -1,0 +1,61 @@
+Get-Service | format-list *
+this will list everything out in a format thats more readable for the eyes
+
+get-service | get-member
+gives you member types that you can use to manipulate an object.
+
+write-host goes straight to the terminal
+write-output goes straught through the pipeline to the terminal 
+
+get-command -verb format 
+will show you all the formats you can have with your outputs
+
+
+get-service | format-table name, status
+will give you list of services and their status
+
+get-command -noun list
+will give you all cmdelts with list as ther noun
+
+
+sorted by file size
+get-childitem | sort-object -property length -descending
+
+grouped ouput
+get-service | group-object status
+
+group by extension and sorted by count decending 
+get-childtitem | group-object extension | sort-object count -decending 
+
+sorts numerically
+3, 2, 5, 7, 1, 4 | Sort-Object
+'3', '2', '5', '7', '1', '4' | Sort-Object
+'3', '2', '5', '7', '1', '4' | Sort-Object -property { [int]$_}
+
+sorts items randomly
+1..10 | Sort-Object -property { get-random }
+
+returns all the running service
+Get-Service | where-object {$_.status -eq "running"}
+
+returns all the stopped services
+Get-Service | where-object {$_.status -eq "stopped"}
+
+returns all processes without powershell in the name
+get-process | where-object {$_.name -notlike 'powershell*'} | sort-object id -descending
+
+returns all processes with powershell in the name
+get-process | where-object {$_.name -like 'powershell*'} | sort-object id -descending
+
+returns the first 10
+get-process | select-object -first 10
+
+
+get-process | start-object starttime | select-object -last 20 | format-table processname, starttime
+
+get-process | select name, starttime | sort-object starttime | select-object -skip 1 -first 2 -last 1
+
+will sort and get everything uniquly 
+ 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 3, 2, 3, 2, 3, 1, 2, 3 | sort-object | get-unique
+ 'bob', 'bob', 'bob', 'john', 'bob', 'john', 'john', 'max', 'max', 'john' | Sort-Object | Get-Unique
+ 
