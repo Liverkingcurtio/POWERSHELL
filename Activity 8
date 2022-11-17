@@ -1,0 +1,18 @@
+$line1 = 'Please send model number: MO5637 to john.doe@sharklasers.com'
+$line2 = 'What model number for john.doe@sharklasers.com?'
+$pattern = '[a-z]{2}\d{2,5}'
+# Create a switch statement that tests for model number
+switch($pattern) {
+    { $line1 -match $_ } {
+        $line1 -match $pattern | out-null
+        $model = $Matches[0]
+        "yes the model number is $model. it is on line 1" }
+    { $line2 -match $_ } {
+        $line2 -match $pattern | out-null
+        $model = $Matches[0]
+        "yes the model number is $model. it is on line 2" }
+    { $line1 -notmatch $_ } {
+        "There is no model number in line1" }
+    { $line2 -notmatch $_ } {
+        "There is no model number in line2" }
+}
