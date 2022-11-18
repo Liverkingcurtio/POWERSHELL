@@ -1,0 +1,4 @@
+#simple function
+
+function say-hello {"Hello $input"}
+   "bob" | say-hello
