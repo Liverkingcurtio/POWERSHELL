@@ -2,3 +2,24 @@
 
 function say-hello {"Hello $input"}
    "bob" | say-hello
+
+
+function get-ord {
+$date=(get-date).DayOfYear
+$year=(get-date).Year
+write-host $year"-"$date
+} get-ord
+
+function get-square([int]$num) {
+$result =  $num * $num
+$result
+} get-square
+
+
+$val1 = 5
+$val2 = 2
+$val3 = 2
+function get-prod($val1, $val2, $val3) {
+return $val1 * $val2 * $val3
+} get-prod
+
