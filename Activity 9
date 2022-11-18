@@ -1,0 +1,18 @@
+# Part 1# Store elements in array
+$procs = "notepad", "iexplore", "mspaint"# iterate array to start processes
+$procs | ForEach-Object { Start-Process $_ }# Query Processes
+Get-Process# iterate array to stop processes
+$procs | ForEach-Object { Stop-Process $_ }
+#># Part 2# Store elements in array
+$procs = "notepad", "iexplore", "mspaint"# iterate array to start processes
+$procs | ForEach-Object { Start-Process $_ }# Save processids to text file
+$file = "$pwd\procs.txt"foreach($proc in $procs){
+    get-process | Where-Object{$_.Name -like $proc} | `
+    ForEach-Object{Add-Content $file $_.Id} }# Iterate through Ids in procs.txt to kill processes
+Get-Content .\procs.txt | ForEach-Object{Stop-process $_}# Part 3# Store elements in array
+$procs = "notepad", "iexplore", "mspaint"# iterate array to start processes
+$procs | ForEach-Object { Start-Process $_ }# display required information about specific processes
+foreach($proc in $procs){
+    get-process | Where-Object{$_.Name -like $proc} | `
+    Format-Table -Property id, name, starttime, totalprocessortime, `
+    VirtualMemorySize, WorkingSet64 }
