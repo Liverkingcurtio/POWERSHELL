@@ -1,0 +1,52 @@
+Create a function that takes two(2) integer values, $a and $b, that are the lengths of two(2) legs of a right triangle and returns the length of the hypotenuse.
+Use the Pythagorean Theorem (a2 + b2 = c2) to find the value of the hypotenuse.
+
+function get-square([int] $b)
+{ 
+$prod = [math]::Pow($b,2)
+return $prod 
+}
+$a = Read-Host 'Enter a value'
+$result = Get-Square($a)
+Write-Output  "$result = ($a * $a)"
+
+function get-square2([int] $c)
+{ 
+$prod2 = [math]::Pow($c,2)
+return $prod2 
+}
+$d = Read-Host 'Enter a value'
+$res = Get-Square2($d)
+Write-Output  "$res = ($d * $d)"
+
+$mom = $res + $result
+$dad = [math]::Pow($mom,2)
+$unc = [math]::Sqrt($dad)
+write-output "$unc"
+-------------------------------------------------------------------------OR---------------------------------------------------------------------------------------
+function get-missin($a, $b) 
+{ return ($a * $a) + ($b * $b)
+}
+
+
+
+
+
+
+Create a function that takes two(2) values, $a and $b, as two(2) angles in degrees of a triangle. Return the value of the missing angle.
+All angles of a triangle add up to be 180 degrees
+
+
+
+
+
+
+
+
+Create a function that takes the following as mandatory parameters:
+First Name
+Last Name
+Age
+Weight in pounds(lbs)
+and returns the information in a hash table using the keys: first, last, age, and weight with the weight value converted to kilograms(kg) rounded to the nearest whole number
+One(1) Kilogram(Kg) = 2.2 pounds(lbs)
