@@ -23,3 +23,16 @@ function get-prod($val1, $val2, $val3) {
 return $val1 * $val2 * $val3
 } get-prod
 
+---------------------------------------------ADVANCED FUNCTIONS-------------------------------------------------------------------------------------------
+function bare-bones {
+[cmdletbinding()]
+param(
+<define parameters>
+)
+begin {
+<code>
+}
+end {
+<code>
+}
+
