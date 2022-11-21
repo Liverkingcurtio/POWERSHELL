@@ -1,0 +1,116 @@
+<# 2 #>
+function q1($var2,$var3,$var4,$var5) {
+    <# The parameters listed are the values of all angles 
+       in a polygon except one. Find and return the value 
+       of the remaining angle. The sum of all angles in a 
+       polygon can be found using the formula:
+       (n-1) * 180 where 'n' is the number of angles/sides
+	   that you already know.
+       If an impossible combination is found, return -1.#>
+       $mom = (540 - ( $var2 + $var3 + $var4 + $var5 ))  
+       if ($mom -le 0) {
+        return -1 }
+        else {
+            return $mom
+            }
+}
+function q2($arr,$rows,$cols,$key) {
+    <# Search the 2 dimensional array for the first occurance of key at column index 0
+       and return the value at column index 2 of the same row.
+       Return -1 if the key is not found.
+    #>
+
+
+        foreach($i in $arr){
+        $first = $i[0]
+        $last = $i[2]
+        if ($first -eq $key)
+        {
+            return $last
+        }       
+    }
+    return -1
+
+   
+}
+
+function q3 {
+    <# In a loop, prompt the user to enter a string until
+       the user enters an empty string (length of 0) to 
+       stop. Return the string with the maximum 
+       length that the user entered." #>
+
+       $arr = @()
+       do {
+       $k = (read-host "")
+       if ( $k.length -gt 0 ) { $arr += $k }
+       }
+       until ($k.length -eq 0)
+       $long = ($arr | sort length -Descending | select -first 1)
+       return $long
+
+
+
+
+}
+
+function q4($filename,$start) {
+    <# Return the line of text from the file given by the `$filename
+	   argument that begins with the text specified by `$start.
+	   If no line in the file begins with the `$start text, return 
+	   $null."
+	#>
+        get-content $filename | where-object { $_ -match "^$start" }
+}
+function q5($path) {
+    <# Return the services in Stopped status sorted
+       descending by their Name
+	#>
+Get-Service | where-object {$_.status -eq "stopped"} | sort -Descending
+}
+function q6($filename) {
+    <# Write each of the elements provided on the pipeline to the
+       file specified by the $filename argument on separate lines
+	#>
+
+        $input | out-file $filename
+
+}
+function q7 {
+	<# Return the list of all startup apps that have an 
+       AppId 'not ending in' '}'.
+    #>
+get-startapps | where-object {$_.appid -notmatch "}$"} 
+}
+function q8($arr) {
+    <# Combine the provided `$arr argument into a string separated 
+       by a '-' between each element and return 
+       this string #>
+       return $arr -join "-"
+}
+function q9($addr) {
+	<# Return `$true when the given argument is an IPv4 address
+	   within the class 'E' otherwise return `$false. 
+       For an IPv4 address to be within class 'E', it
+       must fall within the range '240.0.0.0' to
+       '254.255.255.255'. 
+	#>
+
+            if  ($addr -match '^(24\d|25[0-4])(\.([1-9]?\d|[12]\d\d)){3}$') { 
+        return $true
+         }
+        else  {
+               return $false
+               }
+}
+function q10 () {
+    <# Return the current date/time as a string formatted in 
+       the following way:
+       YearMonthDay@Hour:Minute:Second
+       For example, If the current date/time is 5 minutes and 
+       2 seconds after 3 PM on February 8th, 2018, the return 
+       value should be:  20180208@15:05:02
+    #>
+        $date = get-date -format "yyyyMMdd@HH:mm:ss"
+        return $date
+}
