@@ -1,0 +1,36 @@
+employee1 = [ordered]@{}
+$employee2 = [ordered]@{}
+
+# Add the keys and values for employee1
+$employee1.First = "Mary"
+$employee1["Last"] = "Hopper"
+$employee1.ID = "001"
+$employee1["Job"] = "Software Developer"
+
+# Add keys and values for employee2
+$employee2.First = "John"
+$employee2["Last"] = "Williams"
+$employee2.ID = "002"
+$employee2["Job"] = "Web Developer"
+
+# Add new key username with values
+$employee1.Username = "mhopper001"
+$employee2["Username"] = "jwilliams002"
+
+# Change the value in employee1
+$employee1.Job = "Software Lead"
+
+# Create employee3 
+$employee3 = [ordered]@{}
+
+# Add keys and values for employee3
+$employee3.First = "Alex"
+$employee3["Last"] = "Moran"
+$employee3.ID = "003"
+$employee3.Username = "amoran003"
+$employee3["Job"] = "Software Developer"
+
+# Add new key and value for employees
+$employee1.Status = "Management"
+$employee2["Status"] = "Intermediate"
+$employee3.Status = "Entry Level"
