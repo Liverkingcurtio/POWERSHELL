@@ -34,6 +34,8 @@ function q4($filename,$whichline) {
 	#> 
  $content = get-content $filename 
  return $content[$whichline]
+ 
+ get-content $filename | 
 
 
 }
